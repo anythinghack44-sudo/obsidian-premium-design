@@ -96,10 +96,10 @@ export function HeroArc() {
           <div className="glow-orb pointer-events-none absolute top-6 -z-10 h-[26rem] w-[26rem] rounded-full bg-primary/25 blur-[90px]" />
 
           <CardArc5
-            className="h-[20rem] w-[11rem] lg:h-[24rem] lg:w-[13rem]"
+            className="h-[19rem] w-[9.5rem] lg:h-[23rem] lg:w-[11rem]"
             defaultOpen
             angle={24}
-            gap={170}
+            gap={240}
             yOffset={26}
             cardClassName="surface-lux flex flex-col items-center justify-end pb-6"
             onActiveChange={setActive}
