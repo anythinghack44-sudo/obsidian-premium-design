@@ -270,6 +270,10 @@
   .float-slow,
   .glow-orb,
   .marquee-track,
+  .aurora,
+  .aurora-slow,
+  .preload-fill,
+  .preload-ripple,
   .lift {
     animation: none !important;
     transition: none !important;
