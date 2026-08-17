@@ -92,14 +92,14 @@ export function HeroArc() {
           </dl>
         </div>
 
-        <div className="relative flex flex-col items-center justify-center">
+        <div className="relative flex flex-col items-center justify-center overflow-hidden px-4 py-10">
           <div className="glow-orb pointer-events-none absolute top-6 -z-10 h-[26rem] w-[26rem] rounded-full bg-primary/25 blur-[90px]" />
 
           <CardArc5
-            className="h-[22rem] w-[13rem] lg:h-[26rem] lg:w-[15rem]"
+            className="h-[20rem] w-[11rem] lg:h-[24rem] lg:w-[13rem]"
             defaultOpen
-            angle={30}
-            gap={330}
+            angle={24}
+            gap={170}
             yOffset={26}
             cardClassName="surface-lux flex flex-col items-center justify-end pb-6"
             onActiveChange={setActive}
