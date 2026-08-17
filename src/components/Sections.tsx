@@ -1,4 +1,4 @@
-import bottle from "@/assets/king-royale-bottle.png.asset.json";
+import bottle from "@/assets/king-royale-bottle.webp";
 import { SplitText } from "@/components/SplitText";
 
 /* ---------------- Marquee ---------------- */
@@ -126,8 +126,12 @@ export function Products() {
               <div className="relative flex h-72 items-end justify-center">
                 <div className="glow-orb absolute bottom-6 h-32 w-32 rounded-full bg-primary/25 blur-3xl" />
                 <img
-                  src={bottle.url}
+                  src={bottle}
                   alt={`King Royale ${p.size} bottle`}
+                  width={700}
+                  height={1050}
+                  loading="lazy"
+                  decoding="async"
                   className={`${p.scale} w-auto object-contain transition-transform duration-700 group-hover:-translate-y-3`}
                 />
               </div>
