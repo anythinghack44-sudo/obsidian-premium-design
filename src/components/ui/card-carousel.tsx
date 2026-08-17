@@ -92,7 +92,7 @@ export default function CardCarousel({
                   type="button"
                   aria-label={`Show ${item.title}`}
                   onClick={() => setActiveIndex(i)}
-                  className="group relative block overflow-hidden rounded-2xl border border-border shadow-[0_30px_80px_-30px_oklch(0.05_0_0/0.95)]"
+                  className="group relative block overflow-hidden rounded-2xl border border-border shadow-[0_30px_70px_-35px_oklch(0.35_0.05_168/0.5)]"
                 >
                   <img
                     src={item.src}
@@ -108,7 +108,7 @@ export default function CardCarousel({
                     className={`pointer-events-none absolute inset-0 rounded-2xl transition-opacity duration-500 ${
                       isActive ? "opacity-100" : "opacity-0"
                     }`}
-                    style={{ boxShadow: "inset 0 0 0 1px oklch(0.82 0.13 88 / 45%)" }}
+                    style={{ boxShadow: "inset 0 0 0 1px oklch(0.58 0.12 80 / 55%)" }}
                   />
                 </button>
                 <figcaption

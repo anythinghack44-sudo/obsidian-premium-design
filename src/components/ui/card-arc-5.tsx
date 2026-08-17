@@ -117,7 +117,7 @@ export default function CardArc5({
                   whileHover: { y: targetY - 14, scale: 1.08, zIndex: 20 },
                   whileTap: { scale: 1.02 },
                 })}
-            className={`absolute inset-0 overflow-hidden rounded-2xl border shadow-[0_24px_60px_-20px_oklch(0.05_0_0/0.9)] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-accent ${
+            className={`absolute inset-0 overflow-hidden rounded-2xl border shadow-[0_24px_55px_-28px_oklch(0.35_0.05_168/0.45)] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-accent ${
               isTapped ? "border-accent/60" : "border-border"
             } ${cardClassName}`}
           >
