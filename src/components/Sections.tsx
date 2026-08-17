@@ -1,4 +1,5 @@
 import bottle from "@/assets/king-royale-bottle.png.asset.json";
+import { SplitText } from "@/components/SplitText";
 
 /* ---------------- Marquee ---------------- */
 
@@ -38,7 +39,10 @@ export function Story() {
         <div className="reveal">
           <p className="text-[0.65rem] uppercase tracking-[0.45em] text-accent">The Source</p>
           <h2 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl">
-            Twenty years <span className="text-gold-gradient">underground</span>
+            <SplitText as="span" className="block">Twenty years</SplitText>
+            <SplitText as="span" className="block" unitClassName="text-gold-gradient" split="words" delay={0.2}>
+              underground
+            </SplitText>
           </h2>
           <p className="mt-7 max-w-lg text-sm leading-relaxed text-muted-foreground">
             Snowmelt enters the massif at 2,400 metres and disappears into a labyrinth
@@ -105,7 +109,10 @@ export function Products() {
         <div className="reveal max-w-2xl">
           <p className="text-[0.65rem] uppercase tracking-[0.45em] text-accent">The Collection</p>
           <h2 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl">
-            Three formats, <span className="text-gold-gradient">one standard</span>
+            <SplitText as="span" className="block">Three formats,</SplitText>
+            <SplitText as="span" className="block" unitClassName="text-gold-gradient" split="words" delay={0.2}>
+              one standard
+            </SplitText>
           </h2>
         </div>
 
@@ -153,7 +160,10 @@ export function Minerals() {
         <div className="reveal">
           <p className="text-[0.65rem] uppercase tracking-[0.45em] text-accent">Composition</p>
           <h2 className="mt-6 font-display text-5xl leading-[1.05]">
-            A profile you can <span className="text-gold-gradient">taste</span>
+            <SplitText as="span" className="block">A profile you can</SplitText>
+            <SplitText as="span" className="block" unitClassName="text-gold-gradient" split="words" delay={0.2}>
+              taste
+            </SplitText>
           </h2>
           <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
             Soft on the palate, faintly sweet, with a long mineral finish that clears
@@ -195,8 +205,11 @@ export function Process() {
   return (
     <section className="border-y border-border bg-card/20 py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <h2 className="reveal font-display text-5xl leading-[1.05]">
-          From spring to <span className="text-gold-gradient">seal</span>
+        <h2 className="font-display text-5xl leading-[1.05]">
+          <SplitText as="span" className="block">From spring to</SplitText>
+          <SplitText as="span" className="block" unitClassName="text-gold-gradient" split="words" delay={0.2}>
+            seal
+          </SplitText>
         </h2>
         <div className="mt-16 grid gap-10 md:grid-cols-4">
           {STEPS.map(([title, copy], i) => (
@@ -256,7 +269,10 @@ export function Contact() {
         <div className="reveal">
           <p className="text-[0.65rem] uppercase tracking-[0.45em] text-accent">Enquiries</p>
           <h2 className="mt-6 font-display text-5xl leading-[1.05]">
-            Pour something <span className="text-gold-gradient">rarer</span>
+            <SplitText as="span" className="block">Pour something</SplitText>
+            <SplitText as="span" className="block" unitClassName="text-gold-gradient" split="words" delay={0.2}>
+              rarer
+            </SplitText>
           </h2>
           <p className="mt-7 max-w-md text-sm leading-relaxed text-muted-foreground">
             Wholesale, hospitality and private-label enquiries are handled personally
