@@ -32,6 +32,8 @@ export function useParallax(ref: React.RefObject<HTMLElement | null>, factor = 0
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // honour the visitor's motion preference
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let frame = 0;
     const onScroll = () => {
       cancelAnimationFrame(frame);

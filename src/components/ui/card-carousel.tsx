@@ -97,8 +97,8 @@ export default function CardCarousel({
                   <img
                     src={item.src}
                     alt={item.caption ?? item.title}
-                    width={512}
-                    height={640}
+                    width={480}
+                    height={600}
                     loading="lazy"
                     decoding="async"
                     className="h-[19rem] w-[15rem] object-cover transition-transform duration-700 group-hover:scale-105"
