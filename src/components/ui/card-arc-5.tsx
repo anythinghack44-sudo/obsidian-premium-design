@@ -71,7 +71,9 @@ export default function CardArc5({
             }
             transition={{ type: "spring", stiffness: 180, damping: 20, mass: 0.8, duration }}
             style={{ zIndex: 3 - Math.abs(dist), originX: 0.5, originY: 1 }}
-            whileHover={reduce ? undefined : { y: (targetY || 0) - 14, scale: 1.08, zIndex: 10 }}
+            {...(reduce
+              ? {}
+              : { whileHover: { y: (targetY || 0) - 14, scale: 1.08, zIndex: 10 } })}
             className={`absolute inset-0 overflow-hidden rounded-2xl border border-border shadow-[0_24px_60px_-20px_oklch(0.05_0_0/0.9)] ${cardClassName}`}
           >
             {node}
