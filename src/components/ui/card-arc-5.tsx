@@ -15,6 +15,8 @@ export interface CardArc5Props {
   hoverIntensity?: number;
   cardClassName?: string;
   className?: string;
+  /** fan the arc open by default (hover then lifts individual cards) */
+  defaultOpen?: boolean;
   /** exactly five nodes, rendered inside the arc cards */
   children: React.ReactNode[];
   onActiveChange?: (index: number) => void;
@@ -28,13 +30,14 @@ export default function CardArc5({
   hoverIntensity = 1,
   cardClassName = "",
   className = "",
+  defaultOpen = false,
   children,
   onActiveChange,
 }: CardArc5Props) {
   const [isHovered, setIsHovered] = React.useState(false);
   const reduce = useReducedMotion();
   const center = 2;
-  const open = isHovered || !!reduce;
+  const open = isHovered || defaultOpen || !!reduce;
 
   return (
     <div
