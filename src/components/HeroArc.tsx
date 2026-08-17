@@ -125,7 +125,7 @@ export function HeroArc() {
           <div className="mt-10 flex flex-col items-center">
             <div className="gold-line w-40" />
             <p className="mt-4 text-[0.6rem] uppercase tracking-[0.35em] text-muted-foreground">
-              {FORMATS[active].note} · {FORMATS[active].size}
+              {FORMATS[active]?.note} · {FORMATS[active]?.size}
             </p>
             <p className="mt-2 text-[0.6rem] uppercase tracking-[0.25em] text-muted-foreground/60">
               Hover to open the collection
