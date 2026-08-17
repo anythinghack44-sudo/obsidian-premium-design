@@ -8,7 +8,7 @@ const PRESETS = [
 ];
 
 export function PromoStudio() {
-  const [prompt, setPrompt] = useState(PRESETS[0]);
+  const [prompt, setPrompt] = useState<string>(PRESETS[0] ?? "");
   const [src, setSrc] = useState<string | null>(null);
   const [isFinal, setIsFinal] = useState(false);
   const [loading, setLoading] = useState(false);
