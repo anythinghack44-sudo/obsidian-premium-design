@@ -42,7 +42,7 @@ export function HeroArc() {
             </SplitText>
             <SplitText
               as="span"
-              className="block text-gold-gradient"
+              className="block" unitClassName="text-gold-gradient" split="words"
               delay={0.25}
               stagger={0.035}
             >

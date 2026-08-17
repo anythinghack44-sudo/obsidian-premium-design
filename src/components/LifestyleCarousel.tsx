@@ -55,7 +55,7 @@ export function LifestyleCarousel() {
             <SplitText as="span" className="block">
               Poured by people who
             </SplitText>
-            <SplitText as="span" className="block text-gold-gradient" delay={0.2}>
+            <SplitText as="span" className="block" unitClassName="text-gold-gradient" split="words" delay={0.2}>
               choose carefully
             </SplitText>
           </h2>

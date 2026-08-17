@@ -40,7 +40,7 @@ export function Story() {
           <p className="text-[0.65rem] uppercase tracking-[0.45em] text-accent">The Source</p>
           <h2 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl">
             <SplitText as="span" className="block">Twenty years</SplitText>
-            <SplitText as="span" className="block text-gold-gradient" delay={0.2}>
+            <SplitText as="span" className="block" unitClassName="text-gold-gradient" split="words" delay={0.2}>
               underground
             </SplitText>
           </h2>
@@ -110,7 +110,7 @@ export function Products() {
           <p className="text-[0.65rem] uppercase tracking-[0.45em] text-accent">The Collection</p>
           <h2 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl">
             <SplitText as="span" className="block">Three formats,</SplitText>
-            <SplitText as="span" className="block text-gold-gradient" delay={0.2}>
+            <SplitText as="span" className="block" unitClassName="text-gold-gradient" split="words" delay={0.2}>
               one standard
             </SplitText>
           </h2>
@@ -161,7 +161,7 @@ export function Minerals() {
           <p className="text-[0.65rem] uppercase tracking-[0.45em] text-accent">Composition</p>
           <h2 className="mt-6 font-display text-5xl leading-[1.05]">
             <SplitText as="span" className="block">A profile you can</SplitText>
-            <SplitText as="span" className="block text-gold-gradient" delay={0.2}>
+            <SplitText as="span" className="block" unitClassName="text-gold-gradient" split="words" delay={0.2}>
               taste
             </SplitText>
           </h2>
@@ -207,7 +207,7 @@ export function Process() {
       <div className="mx-auto max-w-7xl px-6">
         <h2 className="font-display text-5xl leading-[1.05]">
           <SplitText as="span" className="block">From spring to</SplitText>
-          <SplitText as="span" className="block text-gold-gradient" delay={0.2}>
+          <SplitText as="span" className="block" unitClassName="text-gold-gradient" split="words" delay={0.2}>
             seal
           </SplitText>
         </h2>
@@ -270,7 +270,7 @@ export function Contact() {
           <p className="text-[0.65rem] uppercase tracking-[0.45em] text-accent">Enquiries</p>
           <h2 className="mt-6 font-display text-5xl leading-[1.05]">
             <SplitText as="span" className="block">Pour something</SplitText>
-            <SplitText as="span" className="block text-gold-gradient" delay={0.2}>
+            <SplitText as="span" className="block" unitClassName="text-gold-gradient" split="words" delay={0.2}>
               rarer
             </SplitText>
           </h2>
