@@ -200,7 +200,7 @@
 
 .lift:hover {
   transform: translateY(-8px);
-  border-color: oklch(0.82 0.13 88 / 45%);
+  border-color: oklch(0.58 0.12 80 / 45%);
   box-shadow: var(--shadow-gold);
 }
 
@@ -209,10 +209,61 @@
   background: linear-gradient(
     90deg,
     transparent,
-    oklch(0.82 0.13 88 / 70%),
+    oklch(0.62 0.12 80 / 55%),
     transparent
   );
 }
+
+/* --- animated hero background --- */
+@keyframes aurora-drift {
+  0% {
+    transform: translate3d(-6%, -4%, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(6%, 5%, 0) scale(1.18);
+  }
+  100% {
+    transform: translate3d(-6%, -4%, 0) scale(1.05);
+  }
+}
+
+.aurora {
+  animation: aurora-drift 22s ease-in-out infinite;
+}
+
+.aurora-slow {
+  animation: aurora-drift 34s ease-in-out infinite reverse;
+}
+
+/* --- preloader --- */
+@keyframes fill-rise {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(8%);
+  }
+}
+
+@keyframes ripple-out {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+
+.preload-fill {
+  animation: fill-rise 1.6s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+}
+
+.preload-ripple {
+  animation: ripple-out 2.2s ease-out infinite;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
