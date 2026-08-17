@@ -158,7 +158,7 @@ export function HeroArc() {
                   height={1050}
                   {...(i === 1 ? { fetchPriority: "high" as const } : { loading: "lazy" as const })}
                   decoding="async"
-                  className={`${f.scale} w-auto object-contain drop-shadow-[0_30px_60px_oklch(0.4_0.1_168/0.55)]`}
+                  className={`${f.scale} w-auto object-contain drop-shadow-[0_26px_46px_oklch(0.4_0.1_168/0.28)]`}
                 />
                 <span className="mt-5 text-[0.55rem] uppercase tracking-[0.32em] text-accent">
                   {f.size}
