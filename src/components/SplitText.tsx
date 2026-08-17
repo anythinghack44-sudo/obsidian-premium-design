@@ -42,12 +42,16 @@ export function SplitText({
     show: { transition: { delayChildren: delay, staggerChildren: stagger } },
   };
 
+  // A CSS filter on a background-clip:text element hides the glyphs in
+  // Chromium, so gradient units rise without the blur burn-off.
+  const blurSafe = !unitClassName.includes("gradient");
+
   const unit = {
-    hidden: { opacity: 0, y: "0.9em", filter: "blur(10px)" },
+    hidden: { opacity: 0, y: "0.9em", ...(blurSafe ? { filter: "blur(10px)" } : {}) },
     show: {
       opacity: 1,
       y: "0em",
-      filter: "blur(0px)",
+      ...(blurSafe ? { filter: "blur(0px)" } : {}),
       transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] as const },
     },
   };
