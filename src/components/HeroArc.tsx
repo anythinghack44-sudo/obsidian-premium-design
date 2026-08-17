@@ -1,32 +1,40 @@
 import { useRef, useState } from "react";
-import bottle from "@/assets/king-royale-bottle.png.asset.json";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
+import bottle from "@/assets/king-royale-bottle.webp";
 import CardArc5 from "@/components/ui/card-arc-5";
 import { SplitText, LineReveal } from "@/components/SplitText";
-import { useParallax } from "@/hooks/use-reveal";
 
 const FORMATS = [
-  { size: "330 ml", name: "Petite", note: "Amenity", scale: "h-[11rem]" },
-  { size: "500 ml", name: "Crest Reserve", note: "Glass", scale: "h-[12.5rem]" },
-  { size: "1000 ml", name: "Royale", note: "Signature", scale: "h-[14.5rem]" },
+  { size: "330 ml", name: "Petite", note: "Amenity", scale: "h-[11.5rem]" },
+  { size: "1000 ml", name: "Royale", note: "Signature", scale: "h-[15rem]" },
   { size: "750 ml", name: "Dining", note: "Table", scale: "h-[13rem]" },
-  { size: "750 ml", name: "Effervescence", note: "Sparkling", scale: "h-[12.5rem]" },
 ];
 
 export function HeroArc() {
-  const glowRef = useRef<HTMLDivElement>(null);
-  useParallax(glowRef, 0.08);
-  const [active, setActive] = useState(2);
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const [active, setActive] = useState(1);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const smooth = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.4 });
+  const glowY = useTransform(smooth, [0, 1], [0, reduce ? 0 : 180]);
+  const arcY = useTransform(smooth, [0, 1], [0, reduce ? 0 : -90]);
+  const copyY = useTransform(smooth, [0, 1], [0, reduce ? 0 : 70]);
+  const fade = useTransform(smooth, [0, 0.9], [1, reduce ? 1 : 0.25]);
 
   return (
-    <section id="top" className="relative min-h-screen overflow-hidden pt-32">
-      <div
-        ref={glowRef}
+    <section ref={sectionRef} id="top" className="relative min-h-screen overflow-hidden pt-32">
+      <motion.div
+        style={{ y: glowY }}
         className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]"
       />
       <div className="pointer-events-none absolute right-[8%] top-24 -z-10 h-64 w-64 rounded-full bg-accent/10 blur-[100px]" />
 
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 pb-28 lg:grid-cols-[1fr_1fr]">
-        <div>
+        <motion.div style={{ y: copyY, opacity: fade }}>
           <SplitText
             as="p"
             split="words"
@@ -90,28 +98,32 @@ export function HeroArc() {
               </div>
             ))}
           </dl>
-        </div>
+        </motion.div>
 
-        <div className="relative flex flex-col items-center justify-center overflow-hidden px-4 py-10">
+        <motion.div
+          style={{ y: arcY }}
+          className="relative flex flex-col items-center justify-center px-4 py-10"
+        >
           <div className="glow-orb pointer-events-none absolute top-6 -z-10 h-[26rem] w-[26rem] rounded-full bg-primary/25 blur-[90px]" />
 
           <CardArc5
-            className="h-[19rem] w-[9.5rem] lg:h-[23rem] lg:w-[11rem]"
+            className="h-[19rem] w-[10rem] lg:h-[23rem] lg:w-[11.5rem]"
             defaultOpen
-            angle={24}
-            gap={160}
+            angle={16}
+            gap={120}
             yOffset={26}
             cardClassName="surface-lux flex flex-col items-center justify-end pb-6"
             onActiveChange={setActive}
+            labels={FORMATS.map((f) => `${f.size} ${f.name}`)}
           >
             {FORMATS.map((f, i) => (
               <div key={f.name} className="flex h-full w-full flex-col items-center justify-end pb-6">
                 <img
-                  src={bottle.url}
+                  src={bottle}
                   alt={`King Royale ${f.size} ${f.name} bottle`}
-                  width={512}
-                  height={768}
-                  {...(i === 2 ? { fetchPriority: "high" as const } : { loading: "lazy" as const })}
+                  width={700}
+                  height={1050}
+                  {...(i === 1 ? { fetchPriority: "high" as const } : { loading: "lazy" as const })}
                   decoding="async"
                   className={`${f.scale} w-auto object-contain drop-shadow-[0_30px_60px_oklch(0.4_0.1_168/0.55)]`}
                 />
@@ -129,10 +141,10 @@ export function HeroArc() {
               {FORMATS[active]?.note} · {FORMATS[active]?.size}
             </p>
             <p className="mt-2 text-[0.6rem] uppercase tracking-[0.25em] text-muted-foreground/60">
-              Hover a bottle to explore the format
+              Tap a bottle to explore the format
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div className="gold-line mx-auto max-w-7xl" />

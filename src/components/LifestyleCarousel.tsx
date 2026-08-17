@@ -1,10 +1,10 @@
 import CardCarousel from "@/components/ui/card-carousel";
 import { SplitText, LineReveal } from "@/components/SplitText";
-import actor from "@/assets/life-actor.jpg";
-import chef from "@/assets/life-chef.jpg";
-import athlete from "@/assets/life-athlete.jpg";
-import sommelier from "@/assets/life-sommelier.jpg";
-import traveller from "@/assets/life-traveller.jpg";
+import actor from "@/assets/life-actor.webp";
+import chef from "@/assets/life-chef.webp";
+import athlete from "@/assets/life-athlete.webp";
+import sommelier from "@/assets/life-sommelier.webp";
+import traveller from "@/assets/life-traveller.webp";
 
 const SLIDES = [
   {
