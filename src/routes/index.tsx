@@ -13,6 +13,7 @@ import {
   Footer,
 } from "@/components/Sections";
 import { PromoStudio } from "@/components/PromoStudio";
+import { Preloader } from "@/components/Preloader";
 import { useReveal } from "@/hooks/use-reveal";
 
 const TITLE = "King Royale — Natural Alpine Mineral Water";
@@ -38,7 +39,9 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Preloader />
       <Nav />
+
       <main>
         <HeroArc />
         <Marquee />

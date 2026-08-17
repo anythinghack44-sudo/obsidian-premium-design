@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import bottle from "@/assets/king-royale-bottle.webp";
+import heroPoster from "@/assets/hero-poster.webp";
+import heroVideo from "@/assets/hero-water.mp4.asset.json";
 import CardArc5 from "@/components/ui/card-arc-5";
 import { SplitText, LineReveal } from "@/components/SplitText";
 
@@ -21,19 +23,50 @@ export function HeroArc() {
   });
   const smooth = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.4 });
   const glowY = useTransform(smooth, [0, 1], [0, reduce ? 0 : 180]);
+  const videoScale = useTransform(smooth, [0, 1], [1, reduce ? 1 : 1.12]);
   const arcY = useTransform(smooth, [0, 1], [0, reduce ? 0 : -90]);
   const copyY = useTransform(smooth, [0, 1], [0, reduce ? 0 : 70]);
   const fade = useTransform(smooth, [0, 0.9], [1, reduce ? 1 : 0.25]);
 
   return (
     <section ref={sectionRef} id="top" className="relative min-h-screen overflow-hidden pt-32">
+      {/* animated video backdrop */}
+      <motion.div style={{ scale: videoScale }} className="absolute inset-0 -z-20">
+        {reduce ? (
+          <img
+            src={heroPoster}
+            alt=""
+            className="h-full w-full object-cover"
+            aria-hidden="true"
+          />
+        ) : (
+          <video
+            className="h-full w-full object-cover"
+            src={heroVideo.url}
+            poster={heroPoster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+            tabIndex={-1}
+          />
+        )}
+      </motion.div>
+
+      {/* light wash so the page stays bright and legible */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,oklch(0.985_0.006_120/0.94)_0%,oklch(0.985_0.006_120/0.7)_38%,oklch(0.985_0.006_120/0.28)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-[linear-gradient(to_bottom,transparent,oklch(0.985_0.006_120))]" />
+
       <motion.div
         style={{ y: glowY }}
-        className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]"
+        className="aurora pointer-events-none absolute left-1/3 top-1/4 -z-10 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-primary/15 blur-[120px]"
       />
-      <div className="pointer-events-none absolute right-[8%] top-24 -z-10 h-64 w-64 rounded-full bg-accent/10 blur-[100px]" />
+      <div className="aurora-slow pointer-events-none absolute right-[8%] top-24 -z-10 h-72 w-72 rounded-full bg-accent/15 blur-[110px]" />
 
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 pb-28 lg:grid-cols-[1fr_1fr]">
+
         <motion.div style={{ y: copyY, opacity: fade }}>
           <SplitText
             as="p"
@@ -125,7 +158,7 @@ export function HeroArc() {
                   height={1050}
                   {...(i === 1 ? { fetchPriority: "high" as const } : { loading: "lazy" as const })}
                   decoding="async"
-                  className={`${f.scale} w-auto object-contain drop-shadow-[0_30px_60px_oklch(0.4_0.1_168/0.55)]`}
+                  className={`${f.scale} w-auto object-contain drop-shadow-[0_26px_46px_oklch(0.4_0.1_168/0.28)]`}
                 />
                 <span className="mt-5 text-[0.55rem] uppercase tracking-[0.32em] text-accent">
                   {f.size}
