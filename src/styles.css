@@ -38,35 +38,36 @@
 
 :root {
   --radius: 0.25rem;
-  --background: oklch(0.09 0.008 160);
-  --foreground: oklch(0.96 0.005 150);
-  --card: oklch(0.13 0.012 165);
-  --card-foreground: oklch(0.96 0.005 150);
-  --popover: oklch(0.13 0.012 165);
-  --popover-foreground: oklch(0.96 0.005 150);
+  --background: oklch(0.985 0.006 120);
+  --foreground: oklch(0.24 0.03 168);
+  --card: oklch(0.995 0.004 120);
+  --card-foreground: oklch(0.24 0.03 168);
+  --popover: oklch(0.995 0.004 120);
+  --popover-foreground: oklch(0.24 0.03 168);
   --primary: oklch(0.52 0.11 165);
-  --primary-foreground: oklch(0.98 0.005 150);
-  --secondary: oklch(0.18 0.02 165);
-  --secondary-foreground: oklch(0.96 0.005 150);
-  --muted: oklch(0.17 0.014 165);
-  --muted-foreground: oklch(0.68 0.015 160);
-  --accent: oklch(0.78 0.13 85);
-  --accent-foreground: oklch(0.12 0.01 160);
+  --primary-foreground: oklch(0.99 0.005 150);
+  --secondary: oklch(0.95 0.015 150);
+  --secondary-foreground: oklch(0.28 0.03 168);
+  --muted: oklch(0.955 0.012 150);
+  --muted-foreground: oklch(0.48 0.02 160);
+  --accent: oklch(0.58 0.11 76);
+  --accent-foreground: oklch(0.99 0.005 90);
   --destructive: oklch(0.58 0.22 27);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.26 0.02 165 / 60%);
-  --input: oklch(0.26 0.02 165);
-  --ring: oklch(0.62 0.12 165);
+  --border: oklch(0.35 0.03 168 / 16%);
+  --input: oklch(0.35 0.03 168 / 22%);
+  --ring: oklch(0.55 0.1 165);
 
-  --gold: oklch(0.82 0.13 88);
-  --gold-soft: oklch(0.9 0.07 92);
+  --gold: oklch(0.62 0.12 80);
+  --gold-soft: oklch(0.74 0.1 88);
   --emerald-deep: oklch(0.42 0.1 168);
 
-  --gradient-gold: linear-gradient(120deg, oklch(0.72 0.11 78), oklch(0.93 0.09 96), oklch(0.75 0.12 82));
-  --gradient-emerald: linear-gradient(140deg, oklch(0.38 0.1 168), oklch(0.2 0.05 170));
-  --shadow-lux: 0 40px 120px -40px oklch(0.55 0.14 168 / 45%);
-  --shadow-gold: 0 0 60px -12px oklch(0.82 0.13 88 / 35%);
+  --gradient-gold: linear-gradient(120deg, oklch(0.56 0.11 68), oklch(0.74 0.11 92), oklch(0.58 0.12 78));
+  --gradient-emerald: linear-gradient(140deg, oklch(0.62 0.09 168), oklch(0.9 0.03 170));
+  --shadow-lux: 0 40px 120px -40px oklch(0.55 0.14 168 / 25%);
+  --shadow-gold: 0 24px 60px -28px oklch(0.58 0.12 80 / 45%);
 }
+
 
 .dark {
   color-scheme: dark;
