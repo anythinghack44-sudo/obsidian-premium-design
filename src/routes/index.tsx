@@ -1,24 +1,57 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/Hero";
+import {
+  Marquee,
+  Story,
+  Products,
+  Minerals,
+  Process,
+  Testimonials,
+  Contact,
+  Footer,
+} from "@/components/Sections";
+import { PromoStudio } from "@/components/PromoStudio";
+import { useReveal } from "@/hooks/use-reveal";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "King Royale — Natural Alpine Mineral Water";
+const DESCRIPTION =
+  "King Royale is a protected alpine mineral water, bottled at source in Valais. Explore the collection, mineral profile and trade enquiries.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useReveal();
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Nav />
+      <main>
+        <Hero />
+        <Marquee />
+        <Story />
+        <Products />
+        <Minerals />
+        <Process />
+        <section id="studio" className="mx-auto max-w-7xl px-6 py-32">
+          <PromoStudio />
+        </section>
+        <Testimonials />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
