@@ -39,7 +39,9 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Preloader />
       <Nav />
+
       <main>
         <HeroArc />
         <Marquee />
