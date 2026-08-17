@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/Hero";
+import { HeroArc } from "@/components/HeroArc";
+import { LifestyleCarousel } from "@/components/LifestyleCarousel";
 import {
   Marquee,
   Story,
@@ -43,6 +44,7 @@ function Index() {
         <Marquee />
         <Story />
         <Products />
+        <LifestyleCarousel />
         <Minerals />
         <Process />
         <section id="studio" className="mx-auto max-w-7xl px-6 py-32">

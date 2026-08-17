@@ -1,5 +1,5 @@
 import bottle from "@/assets/king-royale-bottle.png.asset.json";
-import { SplitText, LineReveal } from "@/components/SplitText";
+import { SplitText } from "@/components/SplitText";
 
 /* ---------------- Marquee ---------------- */
 
