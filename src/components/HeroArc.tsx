@@ -56,7 +56,7 @@ export function HeroArc() {
       </motion.div>
 
       {/* light wash so the page stays bright and legible */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,oklch(0.985_0.006_120/0.96)_0%,oklch(0.985_0.006_120/0.82)_42%,oklch(0.985_0.006_120/0.5)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,oklch(0.985_0.006_120/0.94)_0%,oklch(0.985_0.006_120/0.7)_38%,oklch(0.985_0.006_120/0.28)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-[linear-gradient(to_bottom,transparent,oklch(0.985_0.006_120))]" />
 
       <motion.div
