@@ -104,12 +104,14 @@
 @utility surface-lux {
   background: linear-gradient(
     160deg,
-    oklch(0.16 0.015 168 / 90%),
-    oklch(0.1 0.01 168 / 80%)
+    oklch(1 0 0 / 88%),
+    oklch(0.96 0.012 150 / 72%)
   );
-  border: 1px solid oklch(0.35 0.03 168 / 45%);
+  border: 1px solid oklch(0.4 0.04 168 / 14%);
+  box-shadow: 0 24px 60px -40px oklch(0.4 0.06 168 / 40%);
   backdrop-filter: blur(14px);
 }
+
 
 /* --- micro-transitions --- */
 @keyframes rise {
