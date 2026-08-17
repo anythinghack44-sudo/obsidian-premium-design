@@ -97,8 +97,9 @@ export function HeroArc() {
 
           <CardArc5
             className="h-[22rem] w-[13rem] lg:h-[26rem] lg:w-[15rem]"
-            angle={26}
-            gap={300}
+            defaultOpen
+            angle={30}
+            gap={330}
             yOffset={26}
             cardClassName="surface-lux flex flex-col items-center justify-end pb-6"
             onActiveChange={setActive}
@@ -128,7 +129,7 @@ export function HeroArc() {
               {FORMATS[active]?.note} · {FORMATS[active]?.size}
             </p>
             <p className="mt-2 text-[0.6rem] uppercase tracking-[0.25em] text-muted-foreground/60">
-              Hover to open the collection
+              Hover a bottle to explore the format
             </p>
           </div>
         </div>
