@@ -110,7 +110,7 @@ export function HeroArc() {
             className="h-[19rem] w-[10rem] lg:h-[23rem] lg:w-[11.5rem]"
             defaultOpen
             angle={16}
-            gap={150}
+            gap={120}
             yOffset={26}
             cardClassName="surface-lux flex flex-col items-center justify-end pb-6"
             onActiveChange={setActive}
